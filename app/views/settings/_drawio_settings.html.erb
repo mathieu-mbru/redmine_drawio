@@ -8,6 +8,8 @@
   <em><%= l(:drawio_mathjax_hint) %></em><br/>
   <label><%= l(:drawio_mathjax_url) %></label>
   <%= text_field_tag 'settings[drawio_mathjax_url]', @settings['drawio_mathjax_url'], size: 60, readonly: @settings['drawio_mathjax'] != 'true', class: 'drawio' %><br/>
-  <em><%= l(:drawio_mathjax_url_hint) %></em>
+  <em><%= l(:drawio_mathjax_url_hint) %></em><br/>
+  <label><%= l(:drawio_disable_svg) %></label>
+  <%= check_box_tag 'settings[drawio_disable_svg]', true, @settings['drawio_disable_svg'] %><br/>
   <%= javascript_include_tag "drawio_settings.js", :plugin => "redmine_drawio"%>
 </p>

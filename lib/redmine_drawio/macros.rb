@@ -52,6 +52,7 @@ EOF
         diagramName   = strip_non_filename_chars(args.first)
         
         return "«Please set a diagram name»".html_safe unless diagramName
+        return "<b>SVG support is deactivated, use png or xml instead</b>".html_safe if Setting.plugin_redmine_drawio['drawio_disable_svg'] && diagramName =~ /.svg?/i
         return "«Only png, svg and xml diagram formats are supported»".html_safe unless diagramName =~ /.*(\.(png|svg|xml))?$/i
         
         # defalts
